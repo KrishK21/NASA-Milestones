@@ -4,9 +4,6 @@ This project requires installing the necessary NPM packages locally, as they are
 
 Navigate to the project folder:
 
-    cd <folder>
-
-
 Install the required package:
 
     npm install react-scripts --save
@@ -32,5 +29,6 @@ Data Organization: Uses simple mapping and formatting techniques to structure th
 Sorting: Easily sort achievements by year to explore NASA’s milestones.
 
 Interactive Details: Hover over each achievement to view a short description and access more detailed information from NASA’s official page.
+
 
 This tool provides a clean, interactive way to explore NASA's history and key achievements.
