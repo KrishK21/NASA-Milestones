@@ -1,0 +1,315 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap");
+
+body,
+.App {
+  font-family: "Orbitron", sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.App {
+  position: relative;
+  z-index: 0;
+  min-height: 100vh;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: background-position 0.1s ease;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), transparent 80%);
+  z-index: 1;
+}
+.hero-overlay {
+  transition: opacity 0.5s ease;
+  opacity: 1;
+}
+
+.hero-overlay.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Landing Tagline Section */
+.landing-content {
+  text-align: center;
+  padding-top: 15vh;
+  color: white;
+  z-index: 2;
+  position: relative;
+}
+
+.tagline {
+  font-size: 3rem;
+  animation: glow-pulse 3s ease-in-out infinite;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  color: #ddd;
+  margin-bottom: 2rem;
+  opacity: 0.85;
+}
+
+.cta-button {
+  padding: 0.8rem 1.6rem;
+  background: #8b4dff;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: 0 0 10px #8b4dff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #c082ff;
+}
+
+/* Star Layer */
+.star-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Shooting Stars */
+.star {
+  position: absolute;
+  width: 2px;
+  height: 100px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.7), transparent);
+  transform: rotate(45deg);
+  opacity: 0;
+  animation: shootingStar 2.5s ease-in-out forwards;
+  filter: blur(1px);
+  z-index: 2;
+}
+
+@keyframes shootingStar {
+  0% {
+    transform: translate(0, 0) rotate(45deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translate(100vw, -100vh) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+/* Twinkling Stars */
+.twinkle-star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  animation: twinkle 2s infinite ease-in-out;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Header */
+.header-container {
+  animation: fadeInSlide 1.5s ease-in-out;
+  text-align: center;
+  padding-top: 2rem;
+}
+
+.header-container h1 {
+  color: #ffffff;
+  text-shadow: 0 0 8px #8b4dff, 0 0 16px #8b4dff, 0 0 32px #8b4dff;
+  letter-spacing: 2px;
+  font-size: 2.5rem;
+  animation: glow-pulse 2.5s infinite ease-in-out;
+}
+
+@keyframes glow-pulse {
+  0%,
+  100% {
+    text-shadow: 0 0 8px #8b4dff, 0 0 16px #8b4dff;
+  }
+  50% {
+    text-shadow: 0 0 16px #c082ff, 0 0 32px #c082ff;
+  }
+}
+
+@keyframes fadeInSlide {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1.5rem 0;
+  z-index: 2;
+  position: relative;
+}
+
+.controls button {
+  background: #2c1e4a;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 12px;
+  font-weight: bold;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.controls button:hover {
+  background: #4a2e6e;
+  box-shadow: 0 0 12px #8b4dff, 0 0 24px #8b4dff;
+  transform: scale(1.05);
+}
+
+/* Date Picker */
+.date-picker {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+  gap: 1rem;
+  color: white;
+  font-size: 1.2rem;
+  z-index: 2;
+  position: relative;
+}
+
+.date-picker label {
+  font-weight: bold;
+  color: #ccc;
+}
+
+.date-picker select {
+  background: #2c1e4a;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: 2px solid #5a2d82;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: border-color 0.3s;
+}
+
+.date-picker select:hover {
+  border-color: #8b4dff;
+}
+
+.image-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 2rem 1rem;
+  z-index: 2;
+  position: relative;
+}
+
+.image-card {
+  background: rgba(30, 30, 47, 0.85);
+  border-radius: 16px;
+  padding: 1rem;
+  width: 260px;
+  color: white;
+  text-decoration: none;
+  box-shadow: 0 0 8px rgba(139, 77, 255, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 12px #8b4dff, 0 0 24px #8b4dff;
+}
+
+.image-card img {
+  width: 100%;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.image-card:hover img {
+  transform: scale(1.05);
+}
+
+.image-info h3 {
+  margin: 0.8rem 0 0.5rem;
+  font-size: 1.1rem;
+  color: #e0d7ff;
+}
+
+.image-info p {
+  font-size: 0.85rem;
+  color: #ccc;
+  line-height: 1.3;
+}
+
+.no-results {
+  color: white;
+  text-align: center;
+  margin-top: 3rem;
+  font-size: 1.2rem;
+}
+
+.audio-toggle {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 10;
+}
+
+.audio-toggle button {
+  background: rgba(0, 0, 0, 0.6);
+  border: none;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 0 8px #8b4dff;
+  transition: background 0.3s;
+}
+
+.audio-toggle button:hover {
+  background: rgba(100, 50, 200, 0.7);
+}
