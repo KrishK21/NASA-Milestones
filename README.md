@@ -1,5 +1,7 @@
 # Getting Started
 
+Download the repository as a zip
+
 This project requires installing the necessary NPM packages locally, as they are not included in the repository.
 
 Navigate to the project folder:
