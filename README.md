@@ -19,6 +19,7 @@ Once dependencies are installed, start the project with:
 
 
 This will launch the application in your default browser.
+You may need to install the live server extension to run it locally on your browswer.
 
 # Project Description
 
